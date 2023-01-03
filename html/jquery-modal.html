@@ -1,0 +1,132 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/jquery.modal.min.css" />
+    <script src="../js/jquery-3.6.3.min.js"></script>
+    <script src="../js/jquery.modal.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('a[href = "#ex2"], a[href = "#ex3"]').click(function (event) {
+          $(this).modal({
+            fadeDuration: 250,
+          })
+        })
+
+        $('a[href = "#ex3"]').modal({
+          fadeDuration: 250,
+        })
+
+        $('#openModal').click(function () {
+          $('#ex4').modal({
+            fadeDuration: 250,
+            escapeClose: false,
+            clickClose: false,
+            showClose: false,
+          })
+        })
+
+        $('#closeModal').click(function () {
+          $.modal.close()
+        })
+
+        $('a[href = "#ex6-1b"]').click(function (event) {
+          $(this).modal({
+            fadeDuration: 250,
+            escapeClose: false,
+            clickClose: false,
+            showClose: false,
+          })
+        })
+
+        $('a[href = "#ex6-2b"]').click(function (event) {
+          $(this).modal({
+            fadeDuration: 250,
+            escapeClose: false,
+            clickClose: false,
+            showClose: false,
+          })
+        })
+
+        $('a[href = "#ex6-3b"]').click(function (event) {
+          $(this).modal({
+            fadeDuration: 250,
+            escapeClose: false,
+            clickClose: false,
+            showClose: true,
+          })
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <!-- ex1 가장 기본 모달 띄우기 -->
+    <h3>가장 기본 모달 띄우기</h3>
+    <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
+    <div id="ex1" class="modal">
+      <p>모달을 클릭하였습니다.</p>
+      <a href="#" rel="modal:close">Close</a>
+    </div>
+
+    <!-- ex2 천천히 모달 띄우기 -->
+    <h3>천천히 모달 띄우기</h3>
+    <p><a href="#ex2">Open Modal</a></p>
+    <div id="ex2" class="modal">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+
+    <!-- ex3 페이지 로드되자마자 모달 띄우기 -->
+    <h3>페이지 로드되자마자 모달 띄우기</h3>
+    <p><a href="#ex3">Open Modal</a></p>
+    <div id="ex3" class="modal">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+
+    <!-- ex4 모달 커스텀 닫기 버튼 -->
+    <h3>모달 커스텀 닫기 버튼</h3>
+    <div>
+      <button id="openModal">OpenModal</button>
+    </div>
+
+    <div id="ex4" class="modal">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <button id="closeModal">CloseModal</button>
+    </div>
+
+    <!-- ex5 모달 순차적으로 띄우기 -->
+    <h3>모달 순차적으로 띄우기</h3>
+    <a href="#ex6-1b">Open First Modal</a>
+    <div class="modal" id="ex6-1b" style="display: none">
+      <p>I'm the first modal.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <a href="#ex6-2b">다음</a>
+    </div>
+
+    <div class="modal" id="ex6-2b" style="display: none">
+      <p>I'm the second modal.</p>
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.
+      </p>
+      <a href="#ex6-3b">다음</a>
+    </div>
+
+    <div class="modal" id="ex6-3b" style="display: none">
+      <p>I'm the third modal. You get the idea.</p>
+    </div>
+  </body>
+</html>
