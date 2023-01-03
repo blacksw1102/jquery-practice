@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <script src="../js/jquery-3.6.3.min.js"></script>
+    <script src="../js/jquery-barcode.min.js"></script>
+    <script type="text/javascript">
+      var a1 = {
+        codabar: '1234567',
+        code11: '1234567',
+        code39: 'ab-1234567',
+        code93: 'ab-1234567',
+        code128: 'ab-1234567',
+        ean8: '1234567',
+        ean13: '1234567890123',
+        std25: '1234567',
+        int25: '1234567',
+        msi: '1234567',
+        datamatrix: 'ab-가나-1234-!@#$',
+      }
+
+      $(function () {
+        for (var k in a1) {
+          $('#drawed_div').append('<div class="col-xs-4"><div><b>' + k + ' </b></div><div id="b_' + k + '"></div></div>')
+          if (k !== 'datamatrix') {
+            $('#b_' + k).barcode(a1[k], k, {
+              barWidth: 2,
+              barHeight: 80,
+              bgColor: 'black',
+              color: 'white',
+              fontSize: 15,
+              showHRI: true,
+              output: 'svg',
+            })
+          } else {
+            $('#b_' + k).barcode(a1[k], k, {
+              bgColor: 'black',
+              color: 'white',
+              showHRI: false,
+              output: 'svg',
+            })
+          }
+        }
+      })
+    </script>
+  </head>
+  <body>
+    <div id="drawed_div" class="row"></div>
+    <div id="custom_bar1"></div>
+  </body>
+</html>
